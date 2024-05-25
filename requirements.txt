@@ -1,0 +1,7 @@
+discord.py
+scikit-learn
+SQLite
+Heroku
+Git
+GitHub Actions
+Sphinx
