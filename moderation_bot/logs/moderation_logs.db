@@ -1,0 +1,18 @@
+import sqlite3
+
+# Create a connection to the SQLite database
+conn = sqlite3.connect('moderation_bot/logs/moderation_logs.db')
+c = conn.cursor()
+
+# Create a table to store moderation logs
+c.execute('''CREATE TABLE IF NOT EXISTS moderation_logs (
+                log_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL,
+                username TEXT NOT NULL,
+                action TEXT NOT NULL,
+                timestamp TEXT NOT NULL
+            )''')
+
+# Commit changes and close the connection
+conn.commit()
+conn.close()
